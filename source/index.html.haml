@@ -1,0 +1,17 @@
+---
+Title: Thoughts on Craft
+---
+
+.welcome
+  %h1 Thoughts on Craft
+  %p.doc
+    - blog.articles[0...5].each do |a|
+      %article
+        %h2
+          %a{href: a.url}= a.title
+          %time= a.date.strftime('%b %e %Y')
+
+        = a.summary
+
+        %a{href: a.url} more &hellip;
+
